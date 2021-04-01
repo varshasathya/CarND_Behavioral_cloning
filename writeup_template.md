@@ -166,7 +166,7 @@ I have carried out the whole data augmentation and preprocessing steps inside th
 
 In case of Image Augmentation,
 
-1. I initially Flipped the images and change the sign of its steering angle which is as same as driving the car in opposite direction which also increases the amount of data. Below is an example of flipped images:
+1. I initially Flipped the images and changed the sign of its steering angle which is as same as driving the car in opposite direction which also increases the amount of data. Below is an example of flipped images:
 
 ![alt text][image3]
 
