@@ -162,7 +162,7 @@ To train the model, I have used Udacity Provided dataset. Below is the Samples f
 
 ![alt text][image2]
 
-I have carried out the whole data augmentation and preprocessing steps inside the generator function (model.py line 79). In order to work with manageable batch of dataset without loading the whole dataset into memory generator functionality is used to improve efficiency when working with large volumes of data.
+I have carried out the whole data augmentation and preprocessing steps inside the generator function (model.py line 79). In order to work with manageable batch of dataset without loading the whole dataset into memory, generator functionality is used which improves efficiency when working with large volumes of data.
 
 In case of Image Augmentation,
 
