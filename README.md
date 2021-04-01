@@ -238,11 +238,11 @@ To train the model, I have used Udacity Provided dataset. Below is the Samples f
 
 ![alt text][image2]
 
-I have carried out the whole data augmentation and preprocessing steps inside the generator function (model.py line 79). In order to work with manageable batch of dataset without loading the whole dataset into memory generator functionality is used to improve efficiency when working with large volumes of data.
+I have carried out the whole data augmentation and preprocessing steps inside the generator function (model.py line 79). In order to work with manageable batch of dataset without loading the whole dataset into memory, generator functionality is used which improves efficiency when working with large volumes of data.
 
 In case of Image Augmentation,
 
-1. I initially Flipped the images and change the sign of its steering angle which is as same as driving the car in opposite direction which also increases the amount of data. Below is an example of flipped images:
+1. I initially Flipped the images and changed the sign of its steering angle which is as same as driving the car in opposite direction which also increases the amount of data. Below is an example of flipped images:
 
 ![alt text][image3]
 
