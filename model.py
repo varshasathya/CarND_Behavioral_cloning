@@ -19,8 +19,9 @@ from keras.models import Model
 #load csv data
 def load_data():
     lines = []
-    with open('../../../opt/carnd_p3/data/driving_log.csv') as csvfile:
+    with open('data/driving_log.csv') as csvfile:
         reader = csv.reader(csvfile)
+        next(reader)
         for line in reader:
             lines.append(line)
     return lines
@@ -86,16 +87,16 @@ def generator(samples,istraining, batch_size=32):
             images = []
             angles = []
             for batch_sample in batch_samples:
-                center_name = '/opt/carnd_p3/data/IMG/'+ batch_sample[0].split('/')[-1]
+                center_name = 'data/IMG/'+batch_sample[0].split('/')[-1]
                 center_image = ndimage.imread(center_name)
                 center_angle = float(batch_sample[3])
                 images.append(center_image)
                 angles.append(center_angle)
                 
                 if istraining:  # only add left and right images for training data
-                    left_name = '/opt/carnd_p3/data/IMG/'+batch_sample[1].split('/')[-1]
+                    left_name = 'data/IMG/'+batch_sample[1].split('/')[-1]
                     img_left = cv2.imread(left_name)
-                    right_name = '/opt/carnd_p3/data/IMG/'+batch_sample[2].split('/')[-1]
+                    right_name = 'data/IMG/'+batch_sample[2].split('/')[-1]
                     img_right = cv2.imread(right_name)
 
                     images.append(img_left)
@@ -138,4 +139,4 @@ model.fit_generator(train_generator,steps_per_epoch=ceil(len(train_samples)/batc
             verbose=1, callbacks=[early_stopping, checkpoint])
 
 #saving model
-model.save_weights('model.h5',True)
+model.save('model.h5')
